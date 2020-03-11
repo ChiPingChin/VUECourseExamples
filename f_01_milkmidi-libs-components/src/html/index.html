@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Page Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+  <!-- <script src="milkmidi-components-1.0.0.js"></script> -->
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.2/flatpickr.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.5.2/flatpickr.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <my-button @click="clickHandler"></my-button>
+    <countdown 
+      v-bind:value="10"
+      @complete="countdownCompleteHandler">
+      自動登出時間：
+    </countdown>
+
+    <br>
+    <input type="text" class="flat-pickr">
+    <input type="text" class="flat-pickr-2">
+  </div>
+
+  <script>
+    var app = new Vue({
+      el: '#app',
+      methods:{
+        countdownCompleteHandler: function(){
+          console.log('countdownCompleteHandler');
+          // alert('timeup');
+        },
+        clickHandler(){
+          var result = window["milkmidi-component"].add(1, 1)
+          console.log('clickHandler', result);
+        }
+      }
+    });
+
+    // 官方 flatpickr 
+    flatpickr('.flat-pickr');
+    window["milkmidi-component"].initFlatPickr('.flat-pickr-2');
+  </script>
+</body>
+</html>
