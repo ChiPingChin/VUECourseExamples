@@ -1,0 +1,11 @@
+// 將您的設定放入此檔案中以覆寫預設值  
+{   
+  // eslint 相關  
+  "editor.codeActionsOnSave": {  
+    "source.fixAll.eslint": true  
+  },  
+  // 在未支援的語言中啟用 emmet  
+  "emmet.includeLanguages": {  
+    "javascript":"javascriptreact"
+  }
+}  
