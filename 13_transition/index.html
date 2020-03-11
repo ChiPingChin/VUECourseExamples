@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <!-- https://vuejs.org/v2/guide/transitions.html#Transition-Classes -->
+  <div id="app">
+    <p>
+      <button v-on:click="showClickHandler">show</button>
+    </p>
+
+    <transition name="fade">
+      <div class="box" v-if="seen"></div>
+      <div class="box red" v-if="!seen" key="boxRed"></div>
+    </transition> 
+
+    <!-- <transition name="fade" mode="out-in">
+      <div class="box" v-if="seen" key="box"></div>
+      <div class="box red" v-if="!seen" key="boxRed"></div>
+    </transition> -->
+    <p>hi</p>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

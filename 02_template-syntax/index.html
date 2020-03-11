@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+  <style>
+    .box{
+      width: 100px;
+      height: 100px;
+      background-color: black;
+    }
+    .box.on{
+      background-color: red;
+    }
+    section{
+      border:1px solid black;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <section>
+      <h2>Template Syntax</h2>
+      <!-- Text -->
+      <p>{{ message }}</p>
+
+      <!-- Attributes -->
+      <p>
+        <a v-bind:href="href" target="_blank">milkmidi blogspot {{href}}</a>
+      </p>
+
+      <!-- v-bind Shorthand -->
+      <p>
+        <a :href="href" target="_blank">milkmidi blogspot {{href}}</a>
+      </p>
+    </section>
+
+    <section>
+      <h2>Using JavaScript Expressions</h2>
+      <p>{{ok ? 'YES' : 'NO'}}</p>
+    </section>
+
+    <section>
+      <h2>Event Handling</h2>
+      <button v-on:click="clickHandler">Click</button>
+      <!-- v-on Shorthand -->
+      <button @click="clickHandler">Click</button>
+    </section>
+
+    <section>
+      <h2>Methods in Inline Handlers</h2>
+      <button @click="clickHandler2('這裡可以傳參數1')">Click 2</button>
+      <button @click="clickHandler2('這裡可以傳參數2')">Click 2</button>
+    </section>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

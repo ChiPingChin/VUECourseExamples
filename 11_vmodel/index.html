@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+  <style>
+    section, .block {
+      position: relative;
+      border: 2px solid #eaeaeb;
+      margin: 20px 0;
+      padding: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <form @submit.prevent="submitHandler">
+      <section>
+        <h2>Text</h2>
+        <p>{{ message }}</p>
+        <input v-model="message" />
+        <br>
+        <input :value="message" @input="message = $event.target.value;">
+      </section>
+
+      <section>
+        <h2>Modifiers</h2>
+        <p>{{ message }}</p>
+        <input v-model.number="message" type="number" />
+      </section>
+
+      <section>
+        <h2>Checkbox</h2>
+        <label>
+          <input type="checkbox" v-model="checked">
+          <span>我是Checkbox</span>
+        </label>
+        <p>{{checked}}</p>
+      </section>
+
+      <section>
+        <h2>Checkbox</h2>
+        <label>
+          <input type="checkbox" v-model="checked" true-value="可以是值喔" false-value="falue的值">
+          <span>我是Checkbox</span>
+        </label>
+        <p>{{checked}}</p>
+      </section>
+
+      <section>
+        <h2>Multiple checkboxs</h2>
+        <label>
+          <input type="checkbox" v-model="checkedNames" value="React">
+          <span>學會 React </span>
+        </label>
+        <label>
+          <input type="checkbox" v-model="checkedNames" value="vue">
+          <span>學會 Vue</span>
+        </label>
+        <label>
+          <input type="checkbox" v-model="checkedNames" value="money100">
+          <span>年薪百萬</span>
+        </label>
+        <label>
+          <input type="checkbox" v-model="checkedNames" value="webpack">
+          <span>還有 webpack 才有機會百萬</span>
+        </label>
+        <p>{{checkedNames}}</p>
+      </section>
+
+      <section>
+        <h2>Radio</h2>
+        <label>
+          <input type="radio" value="我是男生" v-model="gender">
+          <span>男</span>
+        </label>
+        <label>
+          <input type="radio" value="我是女生" v-model="gender">
+          <span>女</span>
+        </label>
+        <p>{{gender}}</p>
+      </section>
+
+      <section>
+        <h2>Select</h2>
+        <select v-model="selected">
+          <option disabled value="">Please select one</option>
+          <option>A</option>
+          <option>B</option>
+          <option>C</option>
+        </select>
+        <p>{{selected}}</p>
+      </section>
+
+      <button type="submit">Submit</button>
+    </form>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js" ></script>
+  <script src="app.js"></script>
+</body>
+</html>

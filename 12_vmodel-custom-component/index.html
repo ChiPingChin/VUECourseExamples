@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+  <style>
+    section, .block {
+      position: relative;
+      border: 2px solid #eaeaeb;
+      margin: 20px 0;
+      padding: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <section>
+      <h2>Text</h2>
+      <p>{{ message }}</p>
+      <input v-model="message" />
+    </section>
+
+    <section>
+      <my-input v-model="message"></my-input>
+    </section>
+
+    <section>
+      <my-checkbox v-model="checked" label="我是Label"></my-checkbox> 
+      <p>{{checked}}</p>
+    </section>
+
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js" ></script>
+  <script src="MyInput.js"></script>
+  <script src="MyCheckbox.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

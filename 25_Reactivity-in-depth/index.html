@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+</head>
+<body>
+  <div id="app">
+    <button @click="doRandom">doRandom</button>
+    <button @click="doRandom2">doRandom2</button>
+    <button @click="doObjectAssign">doObjectAssign</button>
+    <ul>
+      <li v-for="num in todos">
+        {{ num }}
+      </li>
+    </ul>
+    <p>userData:{{userData}}</p>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

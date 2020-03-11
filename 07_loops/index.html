@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue</title>
+  <style>
+    .divider{
+      height: 2px;
+      background-color: red;
+    }
+    section {
+      position: relative;
+      border: 2px solid #eaeaeb;
+      margin: 20px 0;
+      padding: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <button @click="addHandler">add</button>
+
+    <section>
+      <ol>
+        <li v-for="todo in todos">{{ todo.text }}</li>
+      </ol>
+    </section>
+
+    <section>
+      <div>
+        <p v-for="(todo,index) in todos">{{index}} - {{ todo.text }}</p>
+      </div>
+    </section>
+
+    <section>
+      <ul>
+        <template v-for="todo in todos">
+          <li>{{ todo.text }}</li>
+          <li class="divider"></li>
+        </template>
+      </ul>
+    </section>
+
+    <section>
+      <div v-for="(value, key) in userData">
+        <p>{{ key }}: {{ value }}</p>
+      </div>
+    </section>
+    
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
